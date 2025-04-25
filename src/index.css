@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #111827;
+  --bg-dark-color:  #0d1219;
+  --first-color: #1f2937;
+  --text-muted: #9ca3af;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-body);
+  line-height: 1.4;
+  color: var(--text-muted);
+  @apply overflow-x-hidden text-sm lg:text-[16px] font-normal text-gray-400
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  @apply capitalize text-gray-200 font-semibold
+}
+
+button {
+  @apply cursor-pointer
+}
+
+.bg-dark {
+ background-color: var(--bg-dark-color);
+}
+
+header,
+footer {
+  background-color: var(--first-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.img-ratio {
+  position: relative;
+  display: block;
+}
+
+.img-ratio img,
+.img-ratio video,
+.img-ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  @apply inline-flex justify-center capitalize text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-lg px-4 lg:px-5 py-2  focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800 duration-300
+}
+
+p:not(:last-of-type) {
+  margin: 0 0 15px;
+}
+
+.form-control {
+  @apply w-full leading-none bg-gray-700 outline-none border border-gray-600 rounded-md md:py-3 py-2 px-4 focus:border-purple-500 resize-none
+}
