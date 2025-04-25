@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Header from './components/Header/Header'
-import Hero from './components/hero'
+import Hero from './components/Hero'
 import About from './components/About'
 import Contact from './components/Contact'
 import Skills from './components/Skills'
