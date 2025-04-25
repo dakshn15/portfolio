@@ -59,7 +59,7 @@ export const social = [
    },
    {
       icon: <FaGithub />,
-      href: "https://github.com/dakshN15",
+      href: "https://github.com/dakshn15",
       target: "_blank",
    },
    {
