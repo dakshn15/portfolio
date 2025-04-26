@@ -21,9 +21,7 @@ import skill8 from './assets/img/skills/github.png'
 // portfolio images
 import xino from './assets/img/portfolio/xino.png'
 import techno from './assets/img/portfolio/techno.png'
-import grippable from './assets/img/portfolio/grippable.png'
 import honeydrops from './assets/img/portfolio/honeydrops.png'
-import greenolic from './assets/img/portfolio/greenolic.png'
 import weddingPlanning from './assets/img/portfolio/wedding-planning.png'
 
 // navigation
@@ -129,16 +127,6 @@ export const projects = [
    },
    {
       id: 3,
-      title: "Grippable",
-      category: "Web Design",
-      image: grippable,
-      description: "A colorful e-commerce theme for phone accessories with bold visuals and a clean, modern layout.",
-      technologies: ["Html", "Css", "JavaScript"],
-      demoLink: "#!",
-      codeLink: "#!"
-   },
-   {
-      id: 4,
       title: "Honeydrops",
       category: "Web Design",
       image: honeydrops,
@@ -148,7 +136,7 @@ export const projects = [
       codeLink: "#!"
    },
    {
-      id: 5,
+      id: 4,
       title: "Wedding Planning",
       category: "Web Design",
       image: weddingPlanning,
@@ -157,16 +145,6 @@ export const projects = [
       demoLink: "#!",
       codeLink: "#!"
    },
-   // {
-   //    id: 6,
-   //    title: "Greenolic",
-   //    category: "Web Design",
-   //    image: greenolic,
-   //    description: "A vibrant organic grocery theme designed for health-focused stores with a fresh, natural vibe.",
-   //    technologies: ["Html", "Css", "JavaScript"],
-   //    demoLink: "#!",
-   //    codeLink: "#!"
-   // },
 ]
 
 export const contact = [
@@ -175,7 +153,7 @@ export const contact = [
          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>,
       title: "Email",
-      value: "dakshnimavat15@gmail.com",
+      value: "dakshnimavat15@gmail.com", 
    },
    {
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
