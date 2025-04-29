@@ -5,9 +5,16 @@ import { Link } from "react-scroll";
 import { navigation } from "../../data";
 
 export default function Header() {
-
+  const [headerBg, setHeaderBg] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      return window.scrollY > 50 ? setHeaderBg(true) : setHeaderBg(false);
+    })
+  });
+  
 
   useEffect(() => {
     if (isOpen) {
@@ -25,8 +32,8 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed z-4 w-full py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
+    <header className={`${headerBg ? '' : '!bg-transparent !shadow-none py-6'} fixed z-4 w-full py-4 transition-all duration-300`}>
+      <div className="max-w-7xl mx-auto w-full flex justify-between items-center px-4">
 
         {/* Logo */}
         <div className="text-2xl font-bold">
@@ -40,17 +47,15 @@ export default function Header() {
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-4">
           <Socials />
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="flex flex-col justify-center items-center space-y-1">
-              <svg xmlns="http://www.w3.org/2000/svg" height={18} width={18} viewBox="0 0 13 10" fill="none">
-                <path d="M12.4261 1.32038H5.1361C4.86174 1.32038 4.63906 1.0977 4.63906 0.823336C4.63906 0.548969 4.86174 0.326294 5.1361 0.326294H12.4261C12.7004 0.326294 12.9231 0.548969 12.9231 0.823336C12.9231 1.0977 12.7004 1.32038 12.4261 1.32038ZM12.9231 4.79967C12.9231 4.52531 12.7004 4.30263 12.4261 4.30263H0.497042C0.222675 4.30263 0 4.52531 0 4.79967C0 5.07404 0.222675 5.29672 0.497042 5.29672H12.4261C12.7004 5.29672 12.9231 5.07404 12.9231 4.79967ZM8.28404 8.77601C8.28404 8.50164 8.06136 8.27897 7.78699 8.27897H0.497042C0.222675 8.27897 0 8.50164 0 8.77601C0 9.05038 0.222675 9.27305 0.497042 9.27305H7.78699C8.06136 9.27305 8.28404 9.05038 8.28404 8.77601Z" fill="white"></path>
-              </svg>
-            </button>
-          </div>
+          <button
+            onClick={toggleMenu}
+            className="md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" height={18} width={18} viewBox="0 0 13 10" fill="none">
+              <path d="M12.4261 1.32038H5.1361C4.86174 1.32038 4.63906 1.0977 4.63906 0.823336C4.63906 0.548969 4.86174 0.326294 5.1361 0.326294H12.4261C12.7004 0.326294 12.9231 0.548969 12.9231 0.823336C12.9231 1.0977 12.7004 1.32038 12.4261 1.32038ZM12.9231 4.79967C12.9231 4.52531 12.7004 4.30263 12.4261 4.30263H0.497042C0.222675 4.30263 0 4.52531 0 4.79967C0 5.07404 0.222675 5.29672 0.497042 5.29672H12.4261C12.7004 5.29672 12.9231 5.07404 12.9231 4.79967ZM8.28404 8.77601C8.28404 8.50164 8.06136 8.27897 7.78699 8.27897H0.497042C0.222675 8.27897 0 8.50164 0 8.77601C0 9.05038 0.222675 9.27305 0.497042 9.27305H7.78699C8.06136 9.27305 8.28404 9.05038 8.28404 8.77601Z" fill="white"></path>
+            </svg>
+          </button>
         </div>
       </div>
       {/* Mobile Menu Overlay */}

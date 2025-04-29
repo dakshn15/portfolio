@@ -12,7 +12,7 @@ const Footer = () => {
 
     return (
         <footer className="py-5">
-            <div className="max-w-7xl mx-auto px-4">
+            <div className="max-w-7xl mx-auto w-full px-4">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
                     {/* Copyright */}
                     <p>
