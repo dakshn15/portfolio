@@ -38,7 +38,7 @@ export default function Header() {
         {/* Logo */}
         <div className="text-2xl font-bold">
           <span className="text-gray-200">your</span>
-          <span className="text-purple-600">logo</span>
+          <span className="text-purple-500">logo</span>
         </div>
 
         {/* Navigation */}
@@ -73,7 +73,7 @@ export default function Header() {
           <div className="flex justify-end p-4">
             <button
               onClick={toggleMenu}
-              className="p-2 rounded-full hover:bg-purple-600/20 transition-colors duration-300"
+              className="p-2 rounded-full hover:bg-purple-500/20 transition-colors duration-300"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -90,7 +90,7 @@ export default function Header() {
                 spy={true}
                 offset={-40}
                 onSetActive={() => setActiveSection(item.href)}
-                className={`text-gray-200 capitalize hover:text-purple-600 py-3 px-6 text-base w-full text-center border-b border-gray-800 transition-all duration-300 ${activeSection === item.href ? 'text-purple-600 border-purple-600 bg-purple-600/10' : ''
+                className={`text-gray-200 capitalize hover:text-purple-500 py-3 px-6 text-base w-full text-center border-b border-gray-800 transition-all duration-300 ${activeSection === item.href ? 'text-purple-500 border-purple-500 bg-purple-500/10' : ''
                   }`}
                 onClick={toggleMenu}
               >

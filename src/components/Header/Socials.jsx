@@ -6,7 +6,7 @@ function Socials() {
     <ul className='flex gap-4 md:text-xl text-lg'>
         {social.map((item, index) => (
             <li key={index}>
-                <a href={item.href} className='text-gray-200 hover:text-purple-600 transition-all duration-300' target={item.target}>
+                <a href={item.href} className='text-gray-200 hover:text-purple-500 transition-all duration-300' target={item.target}>
                     {item.icon}
                 </a>
             </li>

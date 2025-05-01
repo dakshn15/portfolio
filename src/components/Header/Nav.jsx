@@ -15,8 +15,8 @@ function Nav() {
                   spy={true}
                   offset={-40}
                   onSetActive={() => setActiveSection(item.href)}
-                  className={`text-gray-200 hover:text-purple-600 transition-all duration-300 capitalize cursor-pointer ${
-                     activeSection === item.href ? 'text-purple-600' : ''
+                  className={`text-gray-200 hover:text-purple-500 transition-all duration-300 capitalize cursor-pointer ${
+                     activeSection === item.href ? 'text-purple-500' : ''
                    }`}
                >
                   {item.name}

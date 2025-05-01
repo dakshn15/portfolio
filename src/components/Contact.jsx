@@ -62,7 +62,7 @@ const ContactSection = () => {
     <section id="contact" className="py-10 lg:py-20">
       <div className="max-w-7xl mx-auto w-full px-4">
         <div className="text-center lg:mb-16 md:mb-8 mb-6">
-          <h2 className="text-[26px] sm:text-3xl lg:text-4xl lg:mb-6 mb-4">Get In <span className='text-purple-600'>Touch</span></h2>
+          <h2 className="text-[26px] sm:text-3xl lg:text-4xl lg:mb-6 mb-4">Get In <span className='text-purple-500'>Touch</span></h2>
           <p className="max-w-2xl mx-auto">
             Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
             Fill out the form below or reach out through my social channels.
@@ -82,7 +82,7 @@ const ContactSection = () => {
             <div className="space-y-5">
               {contact.map((item, index) => (
                 <div key={index} className="flex items-center gap-4">
-                  <div className="bg-purple-600 md:p-3 p-2 rounded-lg">
+                  <div className="bg-purple-500 md:p-3 p-2 rounded-lg">
                     {item.icon}
                   </div>
                   <div>

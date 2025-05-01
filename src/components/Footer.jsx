@@ -25,11 +25,11 @@ const Footer = () => {
                             <li key={index}>
                                 <Link
                                     to={item.href}
-                                    activeClass="text-purple-600"
+                                    activeClass="text-purple-500"
                                     spy={true}
                                     offset={-40}
                                     onSetActive={() => setActiveSection(item.href)}
-                                    className={`hover:text-purple-600 transition-all duration-300 capitalize cursor-pointer ${activeSection === item.href ? 'text-purple-600' : ''
+                                    className={`hover:text-purple-500 transition-all duration-300 capitalize cursor-pointer ${activeSection === item.href ? 'text-purple-500' : ''
                                         }`}
                                 >
                                     {item.name}
@@ -42,7 +42,7 @@ const Footer = () => {
                     <ul className='flex gap-4 md:text-xl text-lg'>
                         {social.map((item, index) => (
                             <li key={index}>
-                                <a href={item.href} className='hover:text-purple-600 transition-all duration-300'>{item.icon}</a>
+                                <a href={item.href} className='hover:text-purple-500 transition-all duration-300'>{item.icon}</a>
                             </li>
                         ))}
 
