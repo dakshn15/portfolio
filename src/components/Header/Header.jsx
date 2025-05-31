@@ -32,13 +32,13 @@ export default function Header() {
   };
 
   return (
-    <header className={`${headerBg ? '' : '!bg-transparent !shadow-none py-6'} fixed z-4 w-full py-4 transition-all duration-300`}>
+    <header className={`${headerBg ? '' : '!bg-transparent !shadow-none py-6'} fixed z-4 w-full py-3 transition-all duration-300`}>
       <div className="max-w-7xl mx-auto w-full flex justify-between items-center px-4">
 
         {/* Logo */}
         <div className="text-2xl font-bold">
-          <span className="text-gray-200">your</span>
-          <span className="text-purple-500">logo</span>
+          <span className="text-purple-500">D</span>
+          <span className="text-gray-200">aksh</span>
         </div>
 
         {/* Navigation */}
