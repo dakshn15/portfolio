@@ -37,8 +37,10 @@ export default function Header() {
 
         {/* Logo */}
         <div className="text-2xl font-bold">
-          <span className="text-purple-500">D</span>
-          <span className="text-gray-200">aksh</span>
+          <Link to="home" className="cursor-pointer">
+            <span className="text-purple-500">D</span>
+            <span className="text-gray-200">aksh</span>
+          </Link>
         </div>
 
         {/* Navigation */}
