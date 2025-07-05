@@ -20,8 +20,8 @@ import skill8 from './assets/img/skills/github.png'
 
 // portfolio images
 import xino from './assets/img/portfolio/xino.png'
-import techno from './assets/img/portfolio/techno.png'
-import honeydrops from './assets/img/portfolio/honeydrops.png'
+import petcare from './assets/img/portfolio/petcare.png'
+import artify from './assets/img/portfolio/art-gallery.png'
 import weddingPlanning from './assets/img/portfolio/wedding-planning.png'
 
 // navigation
@@ -70,6 +70,18 @@ export const social = [
 // skills
 export const skills = [
    {
+      image: skill6,
+      name: 'react'
+   },
+   {
+      image: skill7,
+      name: 'tailwind'
+   },
+   {
+      image: skill4,
+      name: 'javascript'
+   },
+   {
       image: skill1,
       name: 'html'
    },
@@ -82,20 +94,8 @@ export const skills = [
       name: 'bootstrap'
    },
    {
-      image: skill4,
-      name: 'javascript'
-   },
-   {
       image: skill5,
       name: 'jquery'
-   },
-   {
-      image: skill6,
-      name: 'react'
-   },
-   {
-      image: skill7,
-      name: 'tailwind'
    },
    {
       image: skill8,
@@ -117,23 +117,23 @@ export const projects = [
    },
    {
       id: 2,
-      title: "Techno",
+      title: "Petcare",
       category: "Web Design",
-      image: techno,
-      description: "A sleek e-commerce theme for electronics with a dark UI and interactive product displays.",
-      technologies: ["Html", "Css", "JavaScript"],
-      demoLink: "https://dakshn15.github.io/techno/",
-      codeLink: "https://github.com/dakshn15/techno"
+      image: petcare,
+      description: "A pet care website that provides information about pet care, pet grooming, pet training, and pet adoption.",
+      technologies: ["Html", "Tailwind", "JavaScript"],
+      demoLink: "https://dakshn15.github.io/petcare/",
+      codeLink: "https://github.com/dakshn15/petcare"
    },
    {
       id: 3,
-      title: "Honeydrops",
+      title: "Artify",
       category: "Web Design",
-      image: honeydrops,
-      description: "A sweet and elegant theme crafted for showcasing premium honey collections with a smooth shopping flow.",
-      technologies: ["Html", "Css", "JavaScript"],
-      demoLink: "https://dakshn15.github.io/honeydrops/",
-      codeLink: "https://github.com/dakshn15/honeydrops"
+      image: artify,
+      description: "A website for a art gallery that provides information about the art gallery, the art pieces, the exhibitions and the artists.",
+      technologies: ["Html", "Tailwind", "JavaScript"],
+      demoLink: "https://dakshn15.github.io/art-gallery/",
+      codeLink: "https://github.com/dakshn15/art-gallery"
    },
    {
       id: 4,
