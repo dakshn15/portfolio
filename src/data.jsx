@@ -19,6 +19,7 @@ import skill7 from './assets/img/skills/tailwind.png'
 import skill8 from './assets/img/skills/github.png'
 
 // portfolio images
+import techzonix from './assets/img/portfolio/techzonix.png'
 import xino from './assets/img/portfolio/xino.png'
 import petcare from './assets/img/portfolio/petcare.png'
 import artify from './assets/img/portfolio/art-gallery.png'
@@ -107,6 +108,16 @@ export const skills = [
 export const projects = [
    {
       id: 1,
+      title: "Techzonix",
+      category: "React",
+      image: techzonix,
+      description: "Techzonix is a React-based web project designed to showcase modern tech solutions and creative web designs.",
+      technologies: ["React", "Tailwind", "JavaScript"],
+      demoLink: "https://dakshn15.github.io/techzonix/",
+      codeLink: "https://github.com/dakshn15/techzonix"
+   },
+   {
+      id: 2,
       title: "XinoTracker",
       category: "Dashboard",
       image: xino,
@@ -116,7 +127,7 @@ export const projects = [
       codeLink: "https://github.com/dakshn15/xinotracker"
    },
    {
-      id: 2,
+      id: 3,
       title: "Petcare",
       category: "Web Design",
       image: petcare,
@@ -126,7 +137,7 @@ export const projects = [
       codeLink: "https://github.com/dakshn15/petcare"
    },
    {
-      id: 3,
+      id: 4,
       title: "Artify",
       category: "Web Design",
       image: artify,
@@ -136,7 +147,7 @@ export const projects = [
       codeLink: "https://github.com/dakshn15/art-gallery"
    },
    {
-      id: 4,
+      id: 5,
       title: "Wedding Planning",
       category: "Web Design",
       image: weddingPlanning,

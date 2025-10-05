@@ -23,7 +23,6 @@ function Skills() {
                 <Swiper
                     slidesPerView={2}
                     spaceBetween={20}
-                    loop={true}
                     breakpoints={{
                         1200: {
                             slidesPerView: 8,
