@@ -113,8 +113,8 @@ export const projects = [
       image: techzonix,
       description: "Techzonix is a React-based web project designed to showcase modern tech solutions and creative web designs.",
       technologies: ["React", "Tailwind", "JavaScript"],
-      demoLink: "https://dakshn15.github.io/techzonix/",
-      codeLink: "https://github.com/dakshn15/techzonix"
+      demoLink: "https://dakshn15.github.io/electromart/",
+      codeLink: "https://github.com/dakshn15/electromart"
    },
    {
       id: 2,
