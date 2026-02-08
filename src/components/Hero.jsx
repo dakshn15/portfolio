@@ -13,7 +13,7 @@ function Hero() {
 
       <div className="max-w-7xl mx-auto w-full px-4">
         <div className="flex flex-col items-center text-center">
-          <div className="max-w-2xl mx-auto">
+          <div>
             {/* Enhanced Typography Section */}
             <div className="relative">
               <span className="inline-block font-medium text-gray-300 mb-4 lg:text-lg tracking-wide">Frontend Developer</span>
@@ -21,11 +21,11 @@ function Hero() {
               <h2 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight'>
                 I'm <span className="text-purple-500 relative">
                   Daksh Nimavat
-                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
                 </span>
               </h2>
               
-              <p className='md:text-lg lg:text-xl lg:mb-8 mb-5 text-gray-300 lg:max-w-3xl max-w-md mx-auto leading-relaxed'>
+              <p className='md:text-lg lg:text-xl lg:mb-8 mb-5 text-gray-300 lg:max-w-2xl max-w-md mx-auto leading-relaxed'>
                 I am a frontend web developer who builds <span className="text-purple-400 font-semibold">Fast</span>, <span className="text-blue-400 font-semibold">Modern</span>, and <span className="text-green-400 font-semibold">Responsive</span> Web Interfaces.
               </p>
             </div>

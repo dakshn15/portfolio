@@ -24,6 +24,7 @@ import xino from './assets/img/portfolio/xino.png'
 import petcare from './assets/img/portfolio/petcare.png'
 import artify from './assets/img/portfolio/art-gallery.png'
 import weddingPlanning from './assets/img/portfolio/wedding-planning.png'
+import rezumely from './assets/img/portfolio/rezumely.png'
 
 // navigation
 export const navigation = [
@@ -108,53 +109,63 @@ export const skills = [
 export const projects = [
    {
       id: 1,
+      title: "Rezumely",
+      category: "React",
+      image: rezumely,
+      description: "Create professional resumes, showcase projects and skills, download instantly, and connect through contact links.",
+      technologies: ["React", "Tailwind", "TypeScript"],
+      demoLink: "https://rezumely.netlify.app/",
+      codeLink: "https://github.com/dakshn15/rezumely"
+   },
+   {
+      id: 2,
       title: "Techzonix",
       category: "React",
       image: techzonix,
       description: "Techzonix is a React-based web project designed to showcase modern tech solutions and creative web designs.",
       technologies: ["React", "Tailwind", "JavaScript"],
-      demoLink: "https://dakshn15.github.io/electromart/",
-      codeLink: "https://github.com/dakshn15/electromart"
+      demoLink: "https://techzonix.netlify.app/",
+      codeLink: "https://github.com/dakshn15/techzonix"
    },
    {
-      id: 2,
+      id: 3,
       title: "XinoTracker",
       category: "Dashboard",
       image: xino,
       description: "An employee attendance dashboard featuring staff metrics, gender distribution, top performers, birthdays, and working hours tracking.",
       technologies: ["Html", "Css", "JavaScript"],
-      demoLink: "https://dakshn15.github.io/xinotracker/",
+      demoLink: "https://xinotracker.netlify.app/",
       codeLink: "https://github.com/dakshn15/xinotracker"
    },
    {
-      id: 3,
+      id: 4,
       title: "Petcare",
       category: "Web Design",
       image: petcare,
       description: "A pet care website that provides information about pet care, pet grooming, pet training, and pet adoption.",
       technologies: ["Html", "Tailwind", "JavaScript"],
-      demoLink: "https://dakshn15.github.io/petcare/",
+      demoLink: "https://petcarely.netlify.app/",
       codeLink: "https://github.com/dakshn15/petcare"
    },
    {
-      id: 4,
+      id: 5,
       title: "Artify",
       category: "Web Design",
       image: artify,
       description: "A website for a art gallery that provides information about the art gallery, the art pieces, the exhibitions and the artists.",
       technologies: ["Html", "Tailwind", "JavaScript"],
-      demoLink: "https://dakshn15.github.io/art-gallery/",
+      demoLink: "https://get-artify.netlify.app/",
       codeLink: "https://github.com/dakshn15/art-gallery"
    },
    {
-      id: 5,
+      id: 6,
       title: "Wedding Planning",
       category: "Web Design",
       image: weddingPlanning,
       description: "A romantic wedding planner template featuring elegant design, couple imagery, and essential services for creating dream ceremonies.",
       technologies: ["Html", "Css", "JavaScript"],
-      demoLink: "https://dakshn15.github.io/wedding-planning/",
-      codeLink: "https://github.com/dakshn15/wedding-planning"
+      demoLink: "https://wedding-zon.netlify.app/",
+      codeLink: "https://github.com/dakshn15/wedding-zon"
    },
 ]
 
