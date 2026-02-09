@@ -114,7 +114,7 @@ export const projects = [
       image: rezumely,
       description: "Create professional resumes, showcase projects and skills, download instantly, and connect through contact links.",
       technologies: ["React", "Tailwind", "TypeScript"],
-      demoLink: "https://rezumely.netlify.app/",
+      demoLink: "https://rezumely.vercel.app/",
       codeLink: "https://github.com/dakshn15/rezumely"
    },
    {
@@ -124,7 +124,7 @@ export const projects = [
       image: techzonix,
       description: "Techzonix is a React-based web project designed to showcase modern tech solutions and creative web designs.",
       technologies: ["React", "Tailwind", "JavaScript"],
-      demoLink: "https://techzonix.netlify.app/",
+      demoLink: "https://techzonix.vercel.app/",
       codeLink: "https://github.com/dakshn15/techzonix"
    },
    {
@@ -134,7 +134,7 @@ export const projects = [
       image: xino,
       description: "An employee attendance dashboard featuring staff metrics, gender distribution, top performers, birthdays, and working hours tracking.",
       technologies: ["Html", "Css", "JavaScript"],
-      demoLink: "https://xinotracker.netlify.app/",
+      demoLink: "https://xinotracker.vercel.app/",
       codeLink: "https://github.com/dakshn15/xinotracker"
    },
    {
@@ -144,7 +144,7 @@ export const projects = [
       image: petcare,
       description: "A pet care website that provides information about pet care, pet grooming, pet training, and pet adoption.",
       technologies: ["Html", "Tailwind", "JavaScript"],
-      demoLink: "https://petcarely.netlify.app/",
+      demoLink: "https://petcarely.vercel.app/",
       codeLink: "https://github.com/dakshn15/petcare"
    },
    {
@@ -154,7 +154,7 @@ export const projects = [
       image: artify,
       description: "A website for a art gallery that provides information about the art gallery, the art pieces, the exhibitions and the artists.",
       technologies: ["Html", "Tailwind", "JavaScript"],
-      demoLink: "https://get-artify.netlify.app/",
+      demoLink: "https://get-artify.vercel.app/",
       codeLink: "https://github.com/dakshn15/art-gallery"
    },
    {
@@ -164,7 +164,7 @@ export const projects = [
       image: weddingPlanning,
       description: "A romantic wedding planner template featuring elegant design, couple imagery, and essential services for creating dream ceremonies.",
       technologies: ["Html", "Css", "JavaScript"],
-      demoLink: "https://wedding-zon.netlify.app/",
+      demoLink: "https://wedding-zon.vercel.app/",
       codeLink: "https://github.com/dakshn15/wedding-zon"
    },
 ]
