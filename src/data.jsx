@@ -110,17 +110,17 @@ export const projects = [
    {
       id: 1,
       title: "Rezumely",
-      category: "React",
+      category: "Full Stack",
       image: rezumely,
-      description: "Create professional resumes, showcase projects and skills, download instantly, and connect through contact links.",
-      technologies: ["React", "Tailwind", "TypeScript"],
+      description: "A full-stack AI-powered resume builder with Node.js and PostgreSQL. Generate ATS-optimized resumes with smart AI summaries, job match scoring, and instant PDF downloads.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Tailwind"],
       demoLink: "https://rezumely.vercel.app/",
       codeLink: "https://github.com/dakshn15/rezumely"
    },
    {
       id: 2,
       title: "Techzonix",
-      category: "React",
+      category: "Frontend",
       image: techzonix,
       description: "Techzonix is a React-based web project designed to showcase modern tech solutions and creative web designs.",
       technologies: ["React", "Tailwind", "JavaScript"],
@@ -130,7 +130,7 @@ export const projects = [
    {
       id: 3,
       title: "XinoTracker",
-      category: "Dashboard",
+      category: "Web Design",
       image: xino,
       description: "An employee attendance dashboard featuring staff metrics, gender distribution, top performers, birthdays, and working hours tracking.",
       technologies: ["Html", "Css", "JavaScript"],
@@ -175,7 +175,7 @@ export const contact = [
          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>,
       title: "Email",
-      value: "dakshnimavat15@gmail.com", 
+      value: "dakshnimavat15@gmail.com",
    },
    {
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="md:h-6 md:w-6 h-5 w-5 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
