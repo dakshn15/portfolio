@@ -122,8 +122,8 @@ export const projects = [
       title: "Techzonix",
       category: "Frontend",
       image: techzonix,
-      description: "Techzonix is a React-based web project designed to showcase modern tech solutions and creative web designs.",
-      technologies: ["React", "Tailwind", "JavaScript"],
+      description: "Techzonix is a React-based web project designed to showcase modern tech solutions and creative web designs. Progressive Web App (PWA) support has been added for offline usage and installability.",
+      technologies: ["React", "Tailwind", "JavaScript", "PWA"],
       demoLink: "https://techzonix.vercel.app/",
       codeLink: "https://github.com/dakshn15/techzonix"
    },
@@ -140,10 +140,10 @@ export const projects = [
    {
       id: 4,
       title: "Petcare",
-      category: "Web Design",
+      category: "Frontend",
       image: petcare,
-      description: "A pet care website that provides information about pet care, pet grooming, pet training, and pet adoption.",
-      technologies: ["Html", "Tailwind", "JavaScript"],
+      description: "A React + Tailwind pet care web app that provides information about pet care, grooming, training, and adoption. Converted to React and enhanced with PWA features (offline support, service worker, and installability).",
+      technologies: ["React", "Tailwind", "JavaScript", "PWA"],
       demoLink: "https://petcarely.vercel.app/",
       codeLink: "https://github.com/dakshn15/petcare"
    },
