@@ -119,6 +119,16 @@ export const projects = [
    },
    {
       id: 2,
+      title: "Petcare",
+      category: "Full Stack",
+      image: petcare,
+      description: "A full-stack pet care platform with Node.js, Express, and MongoDB. Book grooming services, apply for adoptions, and manage bookings, pets, and reviews through a role-based admin dashboard with JWT auth.",
+      technologies: ["React", "Node.js", "MongoDB", "Tailwind"],
+      demoLink: "https://petcarely.vercel.app/",
+      codeLink: "https://github.com/dakshn15/petcare"
+   },
+   {
+      id: 3,
       title: "Techzonix",
       category: "Frontend",
       image: techzonix,
@@ -128,7 +138,7 @@ export const projects = [
       codeLink: "https://github.com/dakshn15/techzonix"
    },
    {
-      id: 3,
+      id: 4,
       title: "XinoTracker",
       category: "Web Design",
       image: xino,
@@ -136,16 +146,6 @@ export const projects = [
       technologies: ["Html", "Css", "JavaScript"],
       demoLink: "https://xinotracker.vercel.app/",
       codeLink: "https://github.com/dakshn15/xinotracker"
-   },
-   {
-      id: 4,
-      title: "Petcare",
-      category: "Frontend",
-      image: petcare,
-      description: "A React + Tailwind pet care web app that provides information about pet care, grooming, training, and adoption. Converted to React and enhanced with PWA features (offline support, service worker, and installability).",
-      technologies: ["React", "Tailwind", "JavaScript", "PWA"],
-      demoLink: "https://petcarely.vercel.app/",
-      codeLink: "https://github.com/dakshn15/petcare"
    },
    {
       id: 5,
