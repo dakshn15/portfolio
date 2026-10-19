@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs>
+  <linearGradient id="bl" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbe7ad"/><stop offset="1" stop-color="#d6a64a"/></linearGradient>
+  <linearGradient id="br" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c18f34"/><stop offset="1" stop-color="#7e5718"/></linearGradient>
+  <linearGradient id="cap" x1="0" x2="1"><stop offset="0" stop-color="#a77a2a"/><stop offset="1" stop-color="#5f4210"/></linearGradient>
+  <mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="64" fill="#fff"/><path d="M27 26.5V41.5H31.6A7.5 7.5 0 0 0 31.6 26.5Z" fill="#000"/></mask></defs>
+  <rect width="64" height="64" rx="15" fill="#111214"/>
+  <path d="M32 0V8" stroke="#aab6cb" stroke-width="2.4"/>
+  <g transform="translate(32 7) scale(1.14) translate(-32 -14.5)">
+  <rect x="26" y="14.5" width="12" height="5" rx="1.6" fill="url(#cap)"/>
+  <rect x="24" y="19.5" width="16" height="2.5" rx="1" fill="#e9c574"/>
+  <g mask="url(#cut)">
+    <path d="M18.5 22H45.5L47.5 33L32 61L16.5 33Z" fill="url(#br)"/>
+    <path d="M18.5 22H32V61L16.5 33Z" fill="url(#bl)"/>
+    <path d="M18.5 22 16.5 33 32 61" fill="none" stroke="#fff6d8" stroke-opacity=".55" stroke-width=".8"/>
+  </g></g>
+</svg>

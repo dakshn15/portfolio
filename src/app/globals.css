@@ -1,0 +1,926 @@
+@import "tailwindcss";
+
+/* ==================================================================
+   Tokens
+   Light is "drafting paper", dark is "blueprint". Raw values live on
+   the root so the theme switch only flips one attribute.
+   ================================================================== */
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f4f5f7;
+  --grid: rgb(17 33 66 / 0.055);
+  --grid-strong: rgb(17 33 66 / 0.1);
+  --surface: #fafbfc;
+  --raised: #ffffff;
+  --sunken: #eceef2;
+  --ink: #0b1324;
+  --ink-2: #3a4558;
+  --ink-3: #596477;
+  --line: rgb(11 19 36 / 0.1);
+  --line-strong: rgb(11 19 36 / 0.2);
+  --accent: #2552f5;
+  --accent-soft: rgb(37 82 245 / 0.1);
+  --focus: #2552f5;
+  --success: #0b7f5c;
+  --danger: #c2263f;
+  --primary: #0b1324;
+  --primary-ink: #ffffff;
+  --primary-hover: #1d2a45;
+
+  --layer-interface: #2f62f0;
+  --layer-api: #0a907f;
+  --layer-auth: #c47a0f;
+  --layer-data: #7a4ce6;
+  --layer-ai: #d63c72;
+
+  --shadow-sm: 0 1px 1px rgb(11 19 36 / 0.04), 0 1px 3px rgb(11 19 36 / 0.06);
+  --shadow-md: 0 1px 2px rgb(11 19 36 / 0.05), 0 8px 24px -10px rgb(11 19 36 / 0.18);
+  --shadow-lg: 0 2px 4px rgb(11 19 36 / 0.04), 0 30px 60px -24px rgb(11 19 36 / 0.3);
+  --highlight: inset 0 1px 0 rgb(255 255 255 / 0.9);
+  --shine: rgb(255 255 255 / 0.22);
+  --slab-dim: grayscale(0.9) brightness(1.12) contrast(0.85);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0e0f11;
+  --grid: rgb(255 255 255 / 0.045);
+  --grid-strong: rgb(255 255 255 / 0.085);
+  --surface: #141518;
+  --raised: #1a1b1f;
+  --sunken: #09090b;
+  --ink: #ededee;
+  --ink-2: #b4b6bb;
+  --ink-3: #8d9097;
+  --line: rgb(255 255 255 / 0.1);
+  --line-strong: rgb(255 255 255 / 0.2);
+  --accent: #82b4ff;
+  --accent-soft: rgb(130 180 255 / 0.14);
+  --focus: #8fbcff;
+  --success: #5fd6ae;
+  --danger: #ff8597;
+  --primary: #ededee;
+  --primary-ink: #0e0f11;
+  --primary-hover: #ffffff;
+
+  --layer-interface: #7ea4ff;
+  --layer-api: #43d1be;
+  --layer-auth: #f3b24f;
+  --layer-data: #b597ff;
+  --layer-ai: #ff80a8;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 1px 2px rgb(0 0 0 / 0.3), 0 10px 30px -12px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 2px 4px rgb(0 0 0 / 0.3), 0 30px 70px -24px rgb(0 0 0 / 0.75);
+  --highlight: inset 0 1px 0 rgb(255 255 255 / 0.06);
+  --shine: rgb(255 255 255 / 0.85);
+  --slab-dim: grayscale(0.85) brightness(0.62);
+}
+
+/* Without JavaScript, follow the system setting. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #0e0f11;
+    --grid: rgb(255 255 255 / 0.045);
+    --grid-strong: rgb(255 255 255 / 0.085);
+    --surface: #141518;
+    --raised: #1a1b1f;
+    --sunken: #09090b;
+    --ink: #ededee;
+    --ink-2: #b4b6bb;
+    --ink-3: #8d9097;
+    --line: rgb(255 255 255 / 0.1);
+    --line-strong: rgb(255 255 255 / 0.2);
+    --accent: #82b4ff;
+    --accent-soft: rgb(130 180 255 / 0.14);
+    --focus: #8fbcff;
+    --success: #5fd6ae;
+    --danger: #ff8597;
+    --primary: #ededee;
+    --primary-ink: #0e0f11;
+    --primary-hover: #ffffff;
+    --layer-interface: #7ea4ff;
+    --layer-api: #43d1be;
+    --layer-auth: #f3b24f;
+    --layer-data: #b597ff;
+    --layer-ai: #ff80a8;
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+    --shadow-md: 0 1px 2px rgb(0 0 0 / 0.3), 0 10px 30px -12px rgb(0 0 0 / 0.6);
+    --shadow-lg: 0 2px 4px rgb(0 0 0 / 0.3), 0 30px 70px -24px rgb(0 0 0 / 0.75);
+    --highlight: inset 0 1px 0 rgb(255 255 255 / 0.06);
+  --shine: rgb(255 255 255 / 0.85);
+  --slab-dim: grayscale(0.85) brightness(0.62);
+  }
+}
+
+@theme {
+  --color-*: initial;
+  --text-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  /* Only for surfaces that stay dark in both themes (contact panel, code). */
+  --color-white: #fff;
+
+  --text-2xs: 0.75rem;
+  --text-2xs--line-height: 1.4;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.55;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.65;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.55;
+  --text-xl: 1.5rem;
+  --text-xl--line-height: 1.3;
+  --text-2xl: clamp(1.75rem, 1.35rem + 1.3vw, 2.375rem);
+  --text-2xl--line-height: 1.12;
+  --text-3xl: clamp(2.25rem, 1.4rem + 3vw, 4rem);
+  --text-3xl--line-height: 1;
+  --text-display: clamp(2.75rem, 1rem + 6vw, 7rem);
+  --text-display--line-height: 0.93;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --breakpoint-xs: 26rem;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-sunken: var(--sunken);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-focus: var(--focus);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+
+  --color-layer-interface: var(--layer-interface);
+  --color-layer-api: var(--layer-api);
+  --color-layer-auth: var(--layer-auth);
+  --color-layer-data: var(--layer-data);
+  --color-layer-ai: var(--layer-ai);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-fragment-mono), ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-hand: var(--font-kalam), "Segoe Print", "Comic Sans MS", cursive;
+}
+
+/* ==================================================================
+   Base
+   ================================================================== */
+/* The rupee sign comes from a font already on the device. Archivo only has it
+   in its extended set, an 84 KB download for one character. */
+@font-face {
+  font-family: "dn-symbols";
+  src: local("Segoe UI"), local("SegoeUI"), local("Roboto"), local("Helvetica Neue"), local("Arial"), local("ArialMT");
+  unicode-range: U+20B9;
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--ink-2);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (pointer: fine) {
+    html {
+      overscroll-behavior-y: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    font-family: "dn-symbols", var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    min-height: 100dvh;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  label,
+  summary {
+    touch-action: manipulation;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 28%, transparent);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  code,
+  kbd {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+  }
+}
+
+/* ==================================================================
+   Components shared across pages
+   ================================================================== */
+@layer components {
+  /* Buttons ------------------------------------------------------- */
+  .btn {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 2.875rem;
+    padding: 0 1.3rem;
+    border-radius: 999px;
+    overflow: hidden;
+    font-size: var(--text-sm);
+    font-weight: 560;
+    letter-spacing: -0.005em;
+    line-height: 1;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    transition-property: background-color, border-color, color, box-shadow, transform, opacity;
+    transition-duration: 200ms;
+    transition-timing-function: var(--ease-out);
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .btn svg {
+    flex-shrink: 0;
+    transition: transform 320ms var(--ease-out);
+  }
+
+  /* A light sweep across the button on hover. */
+  .btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(105deg, transparent 35%, var(--shine) 50%, transparent 65%);
+    transform: translateX(-110%);
+    transition: transform 0s;
+    pointer-events: none;
+  }
+
+  .btn:hover::after {
+    transform: translateX(110%);
+    transition: transform 850ms var(--ease-out);
+  }
+
+  .btn:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+  .btn-primary {
+    background: linear-gradient(180deg, color-mix(in oklab, var(--primary) 82%, var(--primary-ink)) 0%, var(--primary) 48%);
+    color: var(--primary-ink);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.16),
+      inset 0 0 0 1px color-mix(in oklab, var(--primary) 80%, var(--primary-ink)),
+      0 1px 2px rgb(0 0 0 / 0.22),
+      0 10px 24px -12px color-mix(in oklab, var(--primary) 75%, transparent);
+  }
+
+  .btn-primary:hover {
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.2),
+      inset 0 0 0 1px color-mix(in oklab, var(--primary) 70%, var(--primary-ink)),
+      0 1px 2px rgb(0 0 0 / 0.22),
+      0 16px 32px -14px color-mix(in oklab, var(--primary) 85%, transparent);
+  }
+
+  .btn-secondary {
+    background: var(--raised);
+    color: var(--ink);
+    border-color: var(--line-strong);
+    box-shadow: var(--highlight), 0 1px 2px rgb(0 0 0 / 0.05);
+  }
+
+  .btn-secondary:hover {
+    border-color: color-mix(in oklab, var(--ink) 38%, transparent);
+    background: color-mix(in oklab, var(--raised) 94%, var(--ink));
+  }
+
+  .btn-ghost {
+    color: var(--ink-2);
+  }
+
+  .btn-ghost::after {
+    display: none;
+  }
+
+  .btn-ghost:hover {
+    color: var(--ink);
+    background: color-mix(in oklab, var(--ink) 7%, transparent);
+  }
+
+  .btn-sm {
+    min-height: 2.375rem;
+    padding: 0 1rem;
+    font-size: var(--text-xs);
+  }
+
+  .btn-lg {
+    min-height: 3.25rem;
+    padding: 0 1.6rem;
+    font-size: var(--text-base);
+  }
+
+  .btn-icon {
+    min-height: 2.5rem;
+    width: 2.5rem;
+    padding: 0;
+  }
+
+  .btn[aria-disabled="true"],
+  .btn:disabled {
+    cursor: progress;
+    opacity: 0.8;
+  }
+
+  /* Form fields ---------------------------------------------------- */
+  .field {
+    width: 100%;
+    min-height: 2.875rem;
+    padding: 0.6rem 0.95rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line-strong);
+    background: var(--raised);
+    color: var(--ink);
+    font-size: var(--text-base);
+    line-height: 1.5;
+    box-shadow: inset 0 1px 2px rgb(11 19 36 / 0.04);
+    transition-property: border-color, box-shadow, background-color;
+    transition-duration: 160ms;
+    transition-timing-function: var(--ease-out);
+  }
+
+  textarea.field {
+    resize: none;
+  }
+
+  .field::placeholder {
+    color: var(--ink-3);
+    opacity: 0.85;
+  }
+
+  .field:hover {
+    border-color: color-mix(in oklab, var(--ink) 35%, transparent);
+  }
+
+  .field:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+
+  .field[aria-invalid="true"] {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--danger) 14%, transparent);
+  }
+
+  /* Links ---------------------------------------------------------- */
+  .link {
+    color: var(--ink);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.24em;
+    text-decoration-color: var(--line-strong);
+    transition: text-decoration-color 160ms var(--ease-out), color 160ms var(--ease-out);
+  }
+
+  .link:hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* Small labelled pill, used for statuses and tags --------------- */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 1.75rem;
+    padding: 0 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: color-mix(in oklab, var(--raised) 80%, transparent);
+    font-size: var(--text-xs);
+    color: var(--ink-2);
+  }
+
+  kbd.key {
+    display: inline-grid;
+    place-items: center;
+    min-width: 1.4rem;
+    height: 1.4rem;
+    padding: 0 0.3rem;
+    border-radius: 6px;
+    border: 1px solid var(--line-strong);
+    border-bottom-width: 2px;
+    background: var(--raised);
+    color: var(--ink-2);
+    font-size: 0.72rem;
+    line-height: 1;
+  }
+
+  /* Type ----------------------------------------------------------- */
+  .type-display {
+    font-variation-settings: "wdth" 118;
+    font-weight: 650;
+    letter-spacing: -0.032em;
+  }
+
+  /* Section titles: confident, not shouting. */
+  .section-title {
+    font-size: clamp(1.75rem, 1.4rem + 1.1vw, 2.5rem);
+    line-height: 1.08;
+    font-variation-settings: "wdth" 104;
+    font-weight: 620;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+  }
+
+  .type-heading {
+    font-variation-settings: "wdth" 106;
+    font-weight: 620;
+    letter-spacing: -0.024em;
+  }
+
+  .type-title {
+    font-variation-settings: "wdth" 108;
+    font-weight: 610;
+    letter-spacing: -0.012em;
+  }
+
+  .type-hand {
+    font-family: var(--font-hand);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+
+@utility shell {
+  width: 100%;
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.125rem, 5vw, 3rem);
+}
+
+/* Blueprint paper: a fine grid that fades at the edges. */
+@utility paper-grid {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-strong) 1px, transparent 1px);
+  background-size:
+    24px 24px,
+    24px 24px,
+    120px 120px,
+    120px 120px;
+  background-position: -1px -1px;
+}
+
+@utility paper-fade {
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 85%);
+}
+
+/* ==================================================================
+   Theme switch: the new theme spreads out in a circle from the switch.
+   ================================================================== */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: theme-reveal 720ms var(--ease-in-out);
+}
+
+/* The pull cord is its own layer during the reveal: only its live view is
+   shown, so it keeps swinging instead of freezing in the old snapshot. */
+::view-transition-old(plumb-cord) {
+  display: none;
+}
+
+::view-transition-new(plumb-cord) {
+  animation: none;
+}
+
+::view-transition-group(plumb-cord) {
+  animation-duration: 0s;
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--reveal-x, 100%) var(--reveal-y, 0%));
+  }
+  to {
+    clip-path: circle(var(--reveal-r, 150vmax) at var(--reveal-x, 100%) var(--reveal-y, 0%));
+  }
+}
+
+/* ==================================================================
+   Motion
+   ================================================================== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slab-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-46px);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* A text caret. */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--success) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 5px transparent;
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: var(--len, 200);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+@keyframes swing {
+  0% {
+    rotate: 0deg;
+  }
+  18% {
+    rotate: 9deg;
+  }
+  40% {
+    rotate: -6deg;
+  }
+  62% {
+    rotate: 3.5deg;
+  }
+  82% {
+    rotate: -1.5deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+/* Scroll-linked reveals, only where the browser supports them natively. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .draw-on-scroll {
+      animation: grow-x linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 40%;
+    }
+  }
+}
+
+/* Movement without fading, for content that must paint immediately. */
+@keyframes settle {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Reading progress for case studies, driven by page scroll where supported. */
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    animation: grow-x linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .reading-progress {
+    display: none;
+  }
+}
+
+/* Comfortable touch targets on touch screens. */
+@media (pointer: coarse) {
+  .btn-icon {
+    min-height: 2.75rem;
+    width: 2.75rem;
+  }
+
+  .btn-sm {
+    min-height: 2.75rem;
+  }
+}
+
+/* ==================================================================
+   v3 layout language: a drafting sheet. Thin frame rules down the page,
+   hatched bands between sections, registration marks at the corners.
+   ================================================================== */
+@utility hatch {
+  background-image: repeating-linear-gradient(-45deg, var(--line) 0 1px, transparent 1px 8px);
+}
+
+/* Scroll reveals. Hidden only when JavaScript is running, so content is
+   never lost without it. */
+:root.js .reveal:not([data-shown]) {
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(6px);
+}
+
+.reveal {
+  transition:
+    opacity 800ms var(--ease-out),
+    transform 900ms var(--ease-out),
+    filter 800ms var(--ease-out);
+  transition-delay: var(--delay, 0ms);
+}
+
+/* Masked line reveal for display headlines: each line rises into view. */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+
+.line-mask > span {
+  display: block;
+  animation: line-up 1000ms var(--ease-out) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* Transform only, and starting part-way up: the first painted frame already
+   shows most of each line, so the headline is what LCP measures. Starting
+   fully clipped, or at opacity 0, hands LCP to whatever small text paints next. */
+@keyframes line-up {
+  from {
+    transform: translateY(38%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Long sections are skipped by the browser until they come near the screen,
+   which keeps the first render and theme switches cheap. The estimates (set
+   per section, measured from the real page) reserve their space until then;
+   after a section has rendered once, its real size is remembered. */
+[data-skippable] {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto var(--cis-sm, 1400px);
+}
+
+@media (min-width: 48rem) {
+  [data-skippable] {
+    contain-intrinsic-block-size: auto var(--cis-md, var(--cis-sm, 1400px));
+  }
+}
+
+@media (min-width: 64rem) {
+  [data-skippable] {
+    contain-intrinsic-block-size: auto var(--cis-lg, var(--cis-md, var(--cis-sm, 1400px)));
+  }
+}
+
+/* Stack tiles: rendered on the server, filtered by the tab the explorer sets. */
+.stack-grid[data-filter="interface"] > [data-group]:not([data-group="interface"]),
+.stack-grid[data-filter="api"] > [data-group]:not([data-group="api"]),
+.stack-grid[data-filter="auth"] > [data-group]:not([data-group="auth"]),
+.stack-grid[data-filter="ai"] > [data-group]:not([data-group="ai"]),
+.stack-grid[data-filter="data"] > [data-group]:not([data-group="data"]),
+.stack-grid[data-filter="workflow"] > [data-group]:not([data-group="workflow"]) {
+  display: none;
+}
+
+.stack-grid > [data-group] {
+  animation-delay: calc(min(var(--i, 0), 14) * 28ms);
+}
+
+.stack-grid[data-filter="all"] > [data-group] {
+  animation-delay: calc(min(var(--j, 0), 14) * 28ms);
+}
+
+/* A soft light that follows the pointer across a card and its border.
+   The base rule sits in a layer so utilities like lg:sticky can override it. */
+@layer components {
+  .spotlight {
+    position: relative;
+    isolation: isolate;
+  }
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in oklab, var(--accent) 70%, transparent), transparent 45%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 400ms var(--ease-out);
+  pointer-events: none;
+}
+
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 50%), color-mix(in oklab, var(--accent) 7%, transparent), transparent 50%);
+  opacity: 0;
+  transition: opacity 400ms var(--ease-out);
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .spotlight:hover::before,
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root.js .reveal:not([data-shown]) {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .line-mask > span {
+    animation: none;
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .draw-down {
+      animation: grow-y linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 70%;
+    }
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .draw-down {
+    display: none;
+  }
+}
