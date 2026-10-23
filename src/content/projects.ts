@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
     layers: ["interface", "api", "auth", "data", "ai"],
     cover: {
       src: waypointCover,
-      alt: "WayPoint’s agency dashboard with revenue and booking charts, shown beside the mobile package page and the AI Trip Studio header.",
+      alt: "WayPoint’s agency dashboard with revenue totals and the monthly revenue chart, beside the Kashmir Valley & Gulmarg package page on a phone.",
     },
     scope: [
       { value: "4", label: "user roles, each with its own dashboard" },
@@ -200,7 +200,7 @@ export const caseStudies: CaseStudy[] = [
         ],
         image: {
           src: waypointTripBuilder,
-          alt: "The AI Trip Studio: a six-step progress bar, a trip passport summary, and featured destinations to add.",
+          alt: "The AI Trip Studio on a phone and a desktop screen: a six-step progress bar, a trip passport summary, and featured destinations to add.",
         },
       },
       {
@@ -493,7 +493,7 @@ export function canTransitionBooking(from: BookingStatus, to: BookingStatus) {
         ],
         image: {
           src: petcareAdoption,
-          alt: "The adoptable pets page with search, gender and size filters, and pet type buttons.",
+          alt: "The adoptable pets page on a phone and a desktop screen, with search, gender and size filters, and pet type buttons.",
         },
       },
       {
@@ -672,7 +672,7 @@ export function canTransitionBooking(from: BookingStatus, to: BookingStatus) {
     layers: ["interface", "api", "auth", "data", "ai"],
     cover: {
       src: rezumelyCover,
-      alt: "Rezumely’s customize step with eight resume templates and a live preview, beside the mobile templates page and the AI tools panel.",
+      alt: "Rezumely’s customize step with eight resume templates and a live preview, beside the templates page on a phone.",
     },
     scope: [
       { value: "8", label: "resume templates" },
@@ -717,7 +717,7 @@ export function canTransitionBooking(from: BookingStatus, to: BookingStatus) {
         ],
         image: {
           src: rezumelyEditor,
-          alt: "The Rezumely editor: section navigation, the personal information form, and a live preview of a two-column resume.",
+          alt: "The Rezumely editor: section navigation, the personal information form, and a live preview of a two-column resume, shown enlarged.",
         },
       },
       {
@@ -733,7 +733,7 @@ export function canTransitionBooking(from: BookingStatus, to: BookingStatus) {
         ],
         image: {
           src: rezumelyAiTools,
-          alt: "The AI-Powered Tools step showing an ATS score of 95, the job matcher, and the cover letter generator.",
+          alt: "The AI-Powered Tools step with the job matcher and the cover letter generator, and its ATS score of 95 shown enlarged.",
         },
       },
       {
@@ -881,7 +881,7 @@ export const exportToPDF = async (element, filename, settings, onProgress) => {`
     layers: ["interface"],
     cover: {
       src: techzonixCover,
-      alt: "The Techzonix product catalog with filters on a desktop screen, beside the mobile home page and a product price card.",
+      alt: "The Techzonix home page with its earbuds banner on a desktop screen, beside the same page on a phone.",
     },
     scope: [
       { value: "23", label: "routes" },
