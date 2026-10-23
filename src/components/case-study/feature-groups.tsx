@@ -7,17 +7,17 @@ import type { FeatureGroup } from "@/content/projects";
  */
 export function FeatureGroups({ groups }: { groups: FeatureGroup[] }) {
   return (
-    <div className="flex flex-col gap-14 md:gap-16">
+    <div className="flex flex-col gap-10 md:gap-16">
       {groups.map((group) => (
         <div key={group.title}>
-          <div className="grid gap-x-10 gap-y-4 md:grid-cols-12">
+          <div className="grid gap-x-10 gap-y-3 md:grid-cols-12 md:gap-y-4">
             <div className="md:col-span-4">
               <h3 className="type-title text-xl text-ink">{group.title}</h3>
-              {group.summary ? <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-3">{group.summary}</p> : null}
+              {group.summary ? <p className="mt-1.5 text-base leading-relaxed text-ink-3 md:mt-2 md:text-sm">{group.summary}</p> : null}
             </div>
             <ul className="border-t border-line md:col-span-8">
               {group.items.map((item) => (
-                <li key={item} className="flex gap-4 border-b border-line py-3 text-ink-2">
+                <li key={item} className="flex gap-3 border-b border-line py-2.5 text-ink-2 md:gap-4 md:py-3">
                   <span aria-hidden className="mt-[0.7em] h-px w-3 shrink-0 bg-ink-3" />
                   {item}
                 </li>
@@ -25,7 +25,7 @@ export function FeatureGroups({ groups }: { groups: FeatureGroup[] }) {
             </ul>
           </div>
           {group.image ? (
-            <div className="mt-8 overflow-hidden rounded-lg border border-line shadow-md">
+            <div className="mt-6 overflow-hidden rounded-lg border border-line shadow-md md:mt-8">
               <Image
                 src={group.image.src}
                 alt={group.image.alt}

@@ -12,8 +12,8 @@ function Node({ current = false }: { current?: boolean }) {
 
 export function ExperienceSection() {
   return (
-    <section id="experience" aria-labelledby="experience-title" className="scroll-mt-20" data-skippable style={{ "--cis-sm": "1890px", "--cis-md": "1400px", "--cis-lg": "1320px" } as React.CSSProperties}>
-      <div className="shell grid grid-cols-1 gap-x-16 gap-y-14 py-20 md:py-24 lg:grid-cols-12">
+    <section id="experience" aria-labelledby="experience-title" className="scroll-mt-20" data-skippable style={{ "--cis-sm": "1380px", "--cis-md": "1400px", "--cis-lg": "1320px" } as React.CSSProperties}>
+      <div className="shell grid grid-cols-1 gap-x-16 gap-y-8 py-12 md:gap-y-14 md:py-24 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-32">
             <SectionHeading
@@ -31,7 +31,7 @@ export function ExperienceSection() {
             <span aria-hidden className="draw-down absolute top-2 bottom-2 -left-[1.53rem] w-px origin-top bg-ink-3 md:-left-[2.03rem]" />
 
             {roles.map((role, index) => (
-              <li key={role.organisation} className="reveal relative pb-14" style={{ "--delay": `${index * 80}ms` } as React.CSSProperties}>
+              <li key={role.organisation} className="reveal relative pb-10 md:pb-14" style={{ "--delay": `${index * 80}ms` } as React.CSSProperties}>
                 <Node current={role.current} />
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                   <p className="text-sm text-ink-3 tabular-nums">
@@ -39,18 +39,18 @@ export function ExperienceSection() {
                   </p>
                   {role.current ? <span className="chip border-success/30 bg-success/8 text-success">Current</span> : null}
                 </div>
-                <h3 className="type-heading mt-3 text-2xl">{role.title}</h3>
+                <h3 className="type-heading mt-2.5 text-2xl md:mt-3">{role.title}</h3>
                 <p className="mt-1 text-ink">{role.organisation}</p>
-                <p className="mt-4 max-w-[40rem] text-ink-2">{role.summary}</p>
-                <ul className="mt-5 grid max-w-[42rem] gap-2.5">
+                <p className="mt-3 max-w-[40rem] text-ink-2 md:mt-4">{role.summary}</p>
+                <ul className="mt-4 grid max-w-[42rem] gap-2 md:mt-5 md:gap-2.5">
                   {role.highlights.map((item) => (
-                    <li key={item} className="relative pl-5 text-[0.9875rem] leading-relaxed text-ink-2">
+                    <li key={item} className="relative pl-4 text-base leading-relaxed text-ink-2 md:pl-5 md:text-[0.9875rem]">
                       <span aria-hidden className="absolute top-[0.72em] left-0 size-1 rounded-full bg-ink-3" />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <ul aria-label="Focus areas" className="mt-5 flex flex-wrap gap-1.5">
+                <ul aria-label="Focus areas" className="mt-4 flex md:mt-5 flex-wrap gap-1.5">
                   {role.focus.map((item) => (
                     <li key={item} className="chip">
                       {item}
@@ -65,7 +65,7 @@ export function ExperienceSection() {
               <p className="text-sm text-ink-3 tabular-nums">
                 {education.start} – {education.end}
               </p>
-              <div className="mt-3 flex flex-wrap items-center justify-between gap-4 rounded-lg border border-line bg-raised p-5 shadow-[var(--highlight)]">
+              <div className="mt-3 flex flex-wrap items-center justify-between gap-4 rounded-lg border border-line bg-raised p-[15px] shadow-[var(--highlight)] md:p-5">
                 <div>
                   <h3 className="type-title text-lg">{education.degree}</h3>
                   <p className="mt-1 text-sm text-ink-2">{education.institution}</p>

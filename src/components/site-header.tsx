@@ -138,7 +138,7 @@ export function SiteHeader() {
         >
           <BrandMark size={30} id="mark-header" className="transition-transform duration-500 ease-[var(--ease-spring)] group-hover/logo:-rotate-6" />
           {/* Full name wherever it fits; first name only on the narrowest phones. */}
-          <span className="type-title text-[0.975rem] whitespace-nowrap">
+          <span className="type-title text-[0.9375rem] whitespace-nowrap md:text-[0.975rem]">
             <span className="min-[22rem]:hidden">{site.name.split(" ")[0]}</span>
             <span className="hidden min-[22rem]:inline">{site.name}</span>
           </span>
@@ -232,7 +232,7 @@ export function SiteHeader() {
                   <Link
                     href={item.href}
                     onClick={() => close(false)}
-                    className="type-title flex min-h-14 items-center justify-between rounded-lg px-4 text-xl text-ink transition-colors hover:bg-sunken"
+                    className="type-title flex min-h-12 items-center justify-between rounded-lg px-3.5 text-xl text-ink md:min-h-14 md:px-4 transition-colors hover:bg-sunken"
                   >
                     {item.label}
                     <ArrowRightIcon className="size-4 text-ink-3" />

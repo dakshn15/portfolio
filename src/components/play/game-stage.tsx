@@ -116,19 +116,19 @@ export function GameStage({ game }: { game: Game }) {
     <dl className="flex min-w-0 flex-wrap items-end gap-x-6 gap-y-2">
       {stats.map((stat) => (
         <div key={stat.label} className="min-w-0">
-          <dt className="text-[0.75rem] text-ink-3">{stat.label}</dt>
+          <dt className="text-2xs text-ink-3">{stat.label}</dt>
           <dd className="type-heading text-lg leading-tight text-ink tabular-nums">{stat.value}</dd>
         </div>
       ))}
       <div>
-        <dt className="text-[0.75rem] text-ink-3">Your best</dt>
+        <dt className="text-2xs text-ink-3">Your best</dt>
         <dd className="type-heading text-lg leading-tight text-ink tabular-nums">{best === null ? "–" : format(best)}</dd>
       </div>
     </dl>
   );
 
   return (
-    <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
+    <div className="grid grid-cols-1 gap-4 md:gap-6 lg:grid-cols-12 lg:gap-8">
       <div className="min-w-0 lg:col-span-8">
         <div
           ref={stageRef}
@@ -184,8 +184,8 @@ export function GameStage({ game }: { game: Game }) {
         </div>
       </div>
 
-      <aside className="flex flex-col gap-6 lg:col-span-4" aria-label={`${game.name} scores and help`}>
-        <section aria-labelledby="scores-title" className="rounded-xl border border-line bg-raised p-5 shadow-[var(--highlight)]">
+      <aside className="flex flex-col gap-4 md:gap-6 lg:col-span-4" aria-label={`${game.name} scores and help`}>
+        <section aria-labelledby="scores-title" className="rounded-xl border border-line bg-raised p-[15px] shadow-[var(--highlight)] md:p-5">
           <h2 id="scores-title" className="type-title text-lg text-ink">
             Your scores
           </h2>
@@ -204,7 +204,7 @@ export function GameStage({ game }: { game: Game }) {
                   <span className="text-ink-2">{run.detail ?? `Run ${run.id}`}</span>
                   <span className="shrink-0 text-ink tabular-nums">
                     {format(run.score)}
-                    {run.best ? <span className="ml-2 rounded-full bg-success/12 px-2 py-0.5 text-[0.75rem] text-success">best</span> : null}
+                    {run.best ? <span className="ml-2 rounded-full bg-success/12 px-2 py-0.5 text-2xs text-success">best</span> : null}
                   </span>
                 </li>
               ))}
@@ -214,13 +214,13 @@ export function GameStage({ game }: { game: Game }) {
           )}
         </section>
 
-        <section aria-labelledby="how-title" className="rounded-xl border border-line bg-raised p-5 shadow-[var(--highlight)]">
+        <section aria-labelledby="how-title" className="rounded-xl border border-line bg-raised p-[15px] shadow-[var(--highlight)] md:p-5">
           <h2 id="how-title" className="type-title text-lg text-ink">
             How to play
           </h2>
           <ol className="mt-3 flex flex-col gap-2.5">
             {game.howTo.map((step, index) => (
-              <li key={step} className="flex gap-3 text-[0.9375rem] leading-snug text-ink-2">
+              <li key={step} className="flex gap-3 text-base leading-snug text-ink-2 md:text-sm">
                 <span className="mt-px font-mono text-xs text-ink-3 tabular-nums">{String(index + 1).padStart(2, "0")}</span>
                 {step}
               </li>

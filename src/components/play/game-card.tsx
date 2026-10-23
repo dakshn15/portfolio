@@ -17,14 +17,14 @@ export function GameCard({ game, compact = false }: { game: Game; compact?: bool
             <GamePreview slug={game.slug} />
           </div>
         </div>
-        <div className="flex flex-1 flex-col p-5">
+        <div className="flex flex-1 flex-col p-[15px] md:p-5">
           <p className="flex flex-wrap items-center gap-2 text-xs text-ink-3">
             <span className="chip">{game.genre}</span>
             <span>{game.length}</span>
           </p>
-          <h3 className="type-title mt-3 text-xl text-ink">{game.name}</h3>
-          {compact ? null : <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-2">{game.tagline}</p>}
-          <div className="mt-auto flex items-center justify-between gap-4 pt-5 text-sm">
+          <h3 className="type-title mt-2.5 text-xl text-ink md:mt-3">{game.name}</h3>
+          {compact ? null : <p className="mt-1.5 text-base leading-relaxed text-ink-2 md:mt-2 md:text-sm">{game.tagline}</p>}
+          <div className="mt-auto flex items-center justify-between gap-4 pt-4 text-sm md:pt-5">
             <BestScore game={game} />
             <span className="inline-flex items-center gap-1.5 font-medium text-ink">
               Play

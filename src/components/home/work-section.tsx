@@ -6,8 +6,8 @@ import { CaseStudyCard } from "../work/case-study-card";
 
 export function WorkSection() {
   return (
-    <section id="work" aria-labelledby="work-title" className="scroll-mt-20" data-skippable style={{ "--cis-sm": "3360px", "--cis-md": "4000px", "--cis-lg": "2520px" } as React.CSSProperties}>
-      <div className="shell py-20 md:py-24">
+    <section id="work" aria-labelledby="work-title" className="scroll-mt-20" data-skippable style={{ "--cis-sm": "2610px", "--cis-md": "4000px", "--cis-lg": "2520px" } as React.CSSProperties}>
+      <div className="shell py-12 md:py-24">
         <SectionHeading
           id="work-title"
           title="Selected work"
@@ -21,7 +21,7 @@ export function WorkSection() {
           }
         />
 
-        <div className="mt-10 flex flex-col gap-8 md:mt-12 lg:gap-10">
+        <div className="mt-7 flex flex-col gap-5 md:mt-12 md:gap-8 lg:gap-10">
           {caseStudies.map((study, index) => (
             <CaseStudyCard key={study.slug} study={study} index={index} />
           ))}

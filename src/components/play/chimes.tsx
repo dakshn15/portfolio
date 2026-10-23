@@ -240,7 +240,7 @@ export function Chimes() {
       ) : null}
       <p
         aria-hidden
-        className="type-hand pointer-events-none absolute right-0 bottom-0 translate-y-full -rotate-3 pt-2 text-[1.05rem] text-ink-3 sm:right-6"
+        className="type-hand pointer-events-none absolute right-0 bottom-0 translate-y-full -rotate-3 pt-2 text-[0.9375rem] whitespace-nowrap text-ink-3 sm:right-6 sm:text-[1.05rem]"
       >
         {!soundOn ? "sounds are off, but they still swing" : audioReady ? "brush across the chimes" : "click once, then brush across the chimes"}
       </p>

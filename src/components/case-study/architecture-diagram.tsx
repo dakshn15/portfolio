@@ -13,7 +13,7 @@ export function ArchitectureDiagram({ architecture }: { architecture: Partial<Re
         return (
           <li
             key={id}
-            className={`relative grid gap-3 overflow-hidden rounded-md border py-4 pr-5 pl-6 sm:grid-cols-[10.5rem_1fr] sm:gap-6 ${
+            className={`relative grid gap-2 overflow-hidden rounded-md border py-3 pr-[15px] pl-5 sm:grid-cols-[10.5rem_1fr] sm:gap-6 sm:py-4 sm:pr-5 sm:pl-6 ${
               items ? "border-line bg-raised" : "border-dashed border-line-strong"
             }`}
           >

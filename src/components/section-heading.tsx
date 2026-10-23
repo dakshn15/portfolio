@@ -11,12 +11,12 @@ type SectionHeadingProps = {
 /** Short title, one-line lead, optional aside. The same rhythm in every section. */
 export function SectionHeading({ id, title, lead, aside }: SectionHeadingProps) {
   return (
-    <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-5">
+    <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-3 md:gap-y-5">
       <div className="reveal max-w-[40rem]">
         <h2 id={id} className="section-title">
           {title}
         </h2>
-        {lead ? <p className="mt-4 text-[1.0625rem] leading-relaxed text-ink-2">{lead}</p> : null}
+        {lead ? <p className="mt-2.5 text-base leading-relaxed text-ink-2 md:mt-4">{lead}</p> : null}
       </div>
       {aside ? (
         <div className="reveal text-sm text-ink-3" style={{ "--delay": "120ms" } as React.CSSProperties}>
@@ -35,7 +35,7 @@ export function SectionDivider() {
   return (
     // Clipped sideways: on narrow screens the marks sit at the very edge and must not widen the page.
     <div aria-hidden className="mx-auto w-full max-w-[78rem] overflow-x-clip min-[78rem]:overflow-x-visible">
-      <div className="hatch relative h-9 border-y border-line">
+      <div className="hatch relative h-6 border-y border-line md:h-9">
         <Mark className="-top-[5px] -left-[5px]" />
         <Mark className="-top-[5px] -right-[5px]" />
         <Mark className="-bottom-[5px] -left-[5px]" />

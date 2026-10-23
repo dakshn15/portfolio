@@ -16,7 +16,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/readme/home-dark.jpg" />
-  <img src="docs/readme/home-light.jpg" alt="The home page: the headline 'I build web products end to end' next to an exploded stack of five product layers" />
+  <img src="docs/readme/home-light.jpg" alt="The home page: the headline 'I build every layer of a web app' next to an exploded stack of five product layers" />
 </picture>
 
 I’m a web developer at WorkDo Solutions, where I work on SaaS, ERP and booking products. In my own time I build complete apps, from the database up to the screens. This site is where I write those apps up properly, so you can see how they work and why I built them that way.

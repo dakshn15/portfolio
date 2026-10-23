@@ -39,7 +39,7 @@ export default async function GamePage({ params }: Props) {
     <>
       <div className="relative isolate">
         <div aria-hidden className="paper-grid paper-fade absolute inset-0 -z-10" />
-        <div className="shell pt-8 pb-10 sm:pt-10">
+        <div className="shell pt-6 pb-6 sm:pt-10 sm:pb-10">
           <Link
             href="/play"
             className="-ml-1 inline-flex min-h-11 items-center gap-2 rounded-md px-1 text-sm text-ink-2 transition-colors hover:text-ink"
@@ -47,27 +47,27 @@ export default async function GamePage({ params }: Props) {
             <ArrowLeftIcon className="size-4" />
             All games
           </Link>
-          <div className="mt-6 flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
+          <div className="mt-4 flex flex-wrap items-end justify-between gap-x-10 gap-y-4 sm:mt-6">
             <div className="max-w-[42rem]">
               <p className="flex flex-wrap items-center gap-2 text-xs text-ink-3">
                 <span className="chip">{game.genre}</span>
                 <span>{game.length}</span>
                 <span className="ml-2">{game.controls.join(", ")}</span>
               </p>
-              <h1 className="type-display mt-4 text-[clamp(2.5rem,1.6rem+3vw,4rem)] leading-[0.98]">{game.name}</h1>
-              <p className="mt-4 text-[1.0625rem] leading-relaxed text-ink-2">{game.description}</p>
+              <h1 className="type-display mt-3 text-[clamp(2rem,1.6rem+3vw,4rem)] sm:mt-4 leading-[0.98]">{game.name}</h1>
+              <p className="mt-3 text-base leading-relaxed text-ink-2 sm:mt-4">{game.description}</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Not inside a reveal or a skipped section: the stage goes position: fixed for full screen. */}
-      <div className="shell pb-16 md:pb-20">
+      <div className="shell pb-12 md:pb-20">
         <GameStage game={game} />
       </div>
 
       <section aria-labelledby="more-title" className="border-t border-line bg-surface">
-        <div className="shell py-14 md:py-16">
+        <div className="shell py-10 md:py-16">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 id="more-title" className="type-heading text-2xl text-ink">
               More games
@@ -76,7 +76,7 @@ export default async function GamePage({ params }: Props) {
               See all {games.length}
             </Link>
           </div>
-          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 md:mt-8 md:gap-5 lg:grid-cols-3">
             {more.map((entry) => (
               <GameCard key={entry.slug} game={entry} compact />
             ))}

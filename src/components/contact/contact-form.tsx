@@ -143,14 +143,14 @@ export function ContactForm() {
   const sending = status.state === "sending";
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate className="flex flex-col gap-5" aria-describedby="form-status">
+    <form ref={formRef} onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 sm:gap-5" aria-describedby="form-status">
       <fieldset>
         <legend className="text-sm font-medium text-ink">What’s it about?</legend>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-2.5 flex flex-wrap gap-2 sm:mt-3">
           {topics.map((topic, index) => (
             <label
               key={topic.value}
-              className="inline-flex min-h-10 cursor-pointer items-center rounded-full border border-line-strong bg-raised px-4 text-sm text-ink-2 transition-[background-color,border-color,color] duration-150 select-none hover:border-ink-3 hover:text-ink has-checked:border-primary has-checked:bg-primary has-checked:text-primary-ink has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-focus"
+              className="inline-flex min-h-9 cursor-pointer items-center rounded-full border border-line-strong bg-raised px-3.5 text-sm sm:min-h-10 sm:px-4 text-ink-2 transition-[background-color,border-color,color] duration-150 select-none hover:border-ink-3 hover:text-ink has-checked:border-primary has-checked:bg-primary has-checked:text-primary-ink has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-focus"
             >
               <input type="radio" name="topic" value={topic.value} defaultChecked={index === 0} className="sr-only" />
               {topic.label}
@@ -159,8 +159,8 @@ export function ContactForm() {
         </div>
       </fieldset>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="flex flex-col gap-2">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+        <div className="flex flex-col gap-1.5 sm:gap-2">
           <label htmlFor="contact-name" className="text-sm font-medium text-ink">
             Name
           </label>
@@ -182,7 +182,7 @@ export function ContactForm() {
           ) : null}
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1.5 sm:gap-2">
           <label htmlFor="contact-email" className="text-sm font-medium text-ink">
             Email
           </label>
@@ -207,7 +207,7 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-1.5 sm:gap-2">
         <label htmlFor="contact-message" className="text-sm font-medium text-ink">
           Message
         </label>
@@ -216,7 +216,7 @@ export function ContactForm() {
           name="message"
           rows={5}
           placeholder="Tell me about the role or the project…"
-          className={`${inputClass} min-h-32`}
+          className={`${inputClass} min-h-32 max-sm:h-28 max-sm:min-h-28`}
           aria-invalid={errors.message ? true : undefined}
           aria-describedby={errors.message ? "contact-message-error" : "contact-message-hint"}
           onKeyDown={submitOnModEnter}

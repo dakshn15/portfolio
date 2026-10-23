@@ -26,7 +26,7 @@ export function CopyEmail({ email, tone = "light" }: { email: string; tone?: "li
       <button
         type="button"
         onClick={copy}
-        className={`inline-flex size-11 shrink-0 items-center justify-center rounded-full border transition-colors ${
+        className={`inline-flex size-9 shrink-0 items-center justify-center rounded-full border transition-colors sm:size-11 max-sm:[&>svg]:size-4 ${
           tone === "dark" ? "border-white/15 text-white/70 hover:border-white/45 hover:text-white" : "border-line-strong text-ink-2 hover:border-ink hover:text-ink"
         }`}
         aria-label="Copy email address"

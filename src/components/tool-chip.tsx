@@ -17,14 +17,14 @@ export function ToolChip({ name, icon }: { name: string; icon?: ToolIconId }) {
   const brand = data ? brandColour(data.hex) : undefined;
   return (
     <li
-      className="group/tool chip min-h-9 gap-2 pr-3.5 pl-2.5 text-sm text-ink transition-[border-color,background-color] duration-200 hover:border-line-strong hover:bg-raised"
+      className="group/tool chip min-h-8 gap-1.5 pr-3 pl-2 text-sm text-ink md:min-h-9 md:gap-2 md:pr-3.5 md:pl-2.5 transition-[border-color,background-color] duration-200 hover:border-line-strong hover:bg-raised"
       style={brand ? ({ "--brand": brand } as CSSProperties) : undefined}
     >
       {data ? (
         <svg
           viewBox="0 0 24 24"
           aria-hidden
-          className={`size-4 shrink-0 fill-ink-3 transition-[fill] duration-200 ${brand ? "group-hover/tool:fill-[var(--brand)]" : "group-hover/tool:fill-ink"}`}
+          className={`size-3.5 shrink-0 fill-ink-3 md:size-4 transition-[fill] duration-200 ${brand ? "group-hover/tool:fill-[var(--brand)]" : "group-hover/tool:fill-ink"}`}
         >
           <path d={data.path} />
         </svg>

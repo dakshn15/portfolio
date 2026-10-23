@@ -39,7 +39,7 @@ export function StackTiles() {
       <li
         key={`${tool.group}-${tool.name}`}
         data-group={tool.group}
-        className="spotlight group/tool flex min-h-24 flex-col justify-between rounded-lg border border-line bg-raised p-4 shadow-[var(--highlight)] transition-[border-color,translate] duration-300 ease-[var(--ease-out)] hover:-translate-y-0.5 hover:border-line-strong motion-safe:animate-[rise-in_520ms_var(--ease-out)_both]"
+        className="spotlight group/tool flex min-h-20 flex-col justify-between rounded-lg border border-line bg-raised p-[15px] md:min-h-24 md:p-4 shadow-[var(--highlight)] transition-[border-color,translate] duration-300 ease-[var(--ease-out)] hover:-translate-y-0.5 hover:border-line-strong motion-safe:animate-[rise-in_520ms_var(--ease-out)_both]"
         style={{ "--i": inGroup, "--j": index, ...(brand ? { "--brand": brand } : {}) } as CSSProperties}
       >
         <span className="flex items-start justify-between">
@@ -47,7 +47,7 @@ export function StackTiles() {
             <svg
               viewBox="0 0 24 24"
               aria-hidden
-              className={`size-6 fill-ink-3 transition-[fill] duration-300 ${
+              className={`size-5 fill-ink-3 md:size-6 transition-[fill] duration-300 ${
                 brand ? "group-hover/tool:fill-[var(--brand)] [@media(hover:none)]:fill-[var(--brand)]" : "group-hover/tool:fill-ink [@media(hover:none)]:fill-ink"
               }`}
             >
@@ -58,7 +58,7 @@ export function StackTiles() {
           )}
           <span aria-hidden className={`size-1.5 rounded-full ${groupDot[tool.group]}`} title={groupName(tool.group)} />
         </span>
-        <span className="mt-4 text-sm font-medium text-ink">{tool.name}</span>
+        <span className="mt-3 text-sm font-medium text-ink md:mt-4">{tool.name}</span>
       </li>
     );
   });

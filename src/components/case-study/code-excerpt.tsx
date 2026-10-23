@@ -35,7 +35,7 @@ export function CodeExcerpt({ excerpt }: { excerpt: Excerpt }) {
         </code>
         <span className="shrink-0">{excerpt.language === "ts" ? "TypeScript" : "JavaScript"}</span>
       </figcaption>
-      <pre className="overflow-x-auto overscroll-x-contain p-4 font-mono text-[0.8125rem] leading-relaxed sm:p-5" tabIndex={0}>
+      <pre className="overflow-x-auto overscroll-x-contain p-[15px] font-mono text-xs leading-relaxed sm:p-5" tabIndex={0}>
         <code translate="no">{highlight(excerpt.code)}</code>
       </pre>
     </figure>
